@@ -1,0 +1,24 @@
+name: TryRxSwift
+options:
+  bundleIdPrefix: com.learning
+targets:
+  TryRxSwift:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: [TryRxSwift]
+  Core:
+    type: framework
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: [Core]
+    dependencies:
+      - carthage: RxSwift
+    scheme:
+      testTargets: [CoreTests]
+  CoreTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [CoreTests]
+    dependencies:
+      - carthage: RxSwift
